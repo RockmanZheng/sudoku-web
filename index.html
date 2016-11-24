@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+  <head><meta http-equiv="Content-Type" content="text/html; charset=gb18030">
+   <style>
+  
+   .bian {
+        background-color: LightSteelBlue;
+        margin-left: 3%;
+        margin-right: 3%;
+        margin-top: 10%;
+    }
+   .biaoti {
+        text-align:center
+        
+    }
+   .size{
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+    font: bold 1.2em Arial, Helvetica, sans-serif;
+   }
+   input{
+    border: none;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, .4);
+    -webkit-border-radius: 10px;
+    background-color:#FFFFFF;
+    color:#737373;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+    font: bold 1.2em Arial, Helvetica, sans-serif;
+   }
+   .green{
+    background: -webkit-linear-gradient(#7AC5CD,#336699);
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, .4);
+    -webkit-border-radius: 10px;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+    color:black;
+    font: bold 3em Arial, Helvetica, sans-serif;
+    } 
+    .footer{
+	font-size:14px;
+	line-height:1.8em;
+	color:black;
+	text-align:center;
+	}
+
+    .footerlogo{
+	text-align:center;
+	}
+} 
+   </style>
+    
+    <title>数独争锋榜</title>
+	<!定义数独类>
+    <script src="model.js"></script>
+    <script src="view.js"></script>
+    <script src="rule.js"></script>
+    <script src="timer.js"></script>
+    <script src="controller.js"></script>
+	<script src="loadxml.js"></script>
+  </head>
+  
+  <body onload="main()" style="background: -webkit-linear-gradient(#87CEEB,#336699,#0099CC,#336699,#7AC5CD,#FFFFFF);">
+    <div class="size">
+    <h1 class="biaoti">数独争锋榜</h1>
+	<a href="login.html">登录/注册</a> 
+    <br>
+    <a class="size">
+    使用说明：
+    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<1>点击空白格进行填写，当选中方块变蓝框时，点击下方红色数字可以将对应数字填入所选格子中，点击“删”可以删除所选格子
+    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<2>确认答案无误后,填写个人信息并点击“提交答卷”按钮即可提交答题信息
+    </a>
+    <br><br>
+    <a>(1)</a>
+    <br>
+    <canvas id="canvas0" width="640" height="640"></canvas>
+    <br>
+    <a>(2)</a>
+    <br>
+    <canvas id="canvas1" width="640" height="640"></canvas>
+    <br>
+    <a>(3)</a>
+    <br>
+    <canvas id="canvas2" width="640" height="640"></canvas>
+    <br>
+    <a>(4)</a>
+    <br>
+    <canvas id="canvas3" width="640" height="640"></canvas>
+    <br>
+    <a>(5)</a>
+    <br>
+    <canvas id="canvas4" width="640" height="640"></canvas>
+    
+    
+    <br>
+    <form action="insert.php" method="post">
+    个人信息<br>
+    学号&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: <input type="text" name="Id" id="Id" />
+    <br>
+    昵称&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: <input type="text" name="Name" id="Name" />
+    <br>
+    联系方式: <input type="text" name="Tel" id="Tel" />
+    <br>
+    <input type="text" id="sodu1" name="sodu1" readonly="readonly" hidden="hidden" size=100%/>
+    <input type="text" id="sodu2" name="sodu2" readonly="readonly" hidden="hidden" size=100%/>
+    <input type="text" id="sodu3" name="sodu3" readonly="readonly" hidden="hidden" size=100%/>
+    <input type="text" id="sodu4" name="sodu4" readonly="readonly" hidden="hidden" size=100%/>
+    <input type="text" id="sodu5" name="sodu5" readonly="readonly" hidden="hidden" size=100%/>
+    <input type="text" name="Time" id="time" readonly="readonly" hidden="hidden" size="36"/>
+    <br>
+    <input class="green" value="提交答卷" type="submit" id="ss" onclick="return update()"/>
+    </form>
+    </div>
+    
+    <br>
+    <br>
+    <br>
+			<p class="footer">Copyright © 2016 Sysu.McDoing. ALL Rights Reserved. 中山大学.数计院.笃行工作室 版权所有</p>
+                        <div class="footerlogo">
+                        <img src="logo.png"/>
+                        </div>
+   
+  </body>
+</html>
